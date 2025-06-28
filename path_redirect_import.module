@@ -82,7 +82,7 @@ function path_redirect_import_read_file($file, $options = array()) {
         $line[3] = $options['langcode'];
       }
       else {
-        $language_options = locale_language_list('name');
+        $language_options = language_list(FALSE, TRUE);
         if (!isset($language_options[$line[3]])) {
           $messages[] = t('Line @line_no contains invalid language code', array('@line_no' => $line_no));
           continue;
