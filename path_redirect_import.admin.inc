@@ -80,7 +80,7 @@ function path_redirect_import_form() {
     '#options' => array(LANGUAGE_NONE => t('All languages')),
   );
   if (module_exists('locale')) {
-    $form['advanced']['langcode']['#options'] = array(LANGUAGE_NONE => t('All languages')) + locale_language_list('name');
+    $form['advanced']['langcode']['#options'] = array(LANGUAGE_NONE => t('All languages')) + language_list(FALSE, TRUE);
   }
 
   $form['actions'] = array(
